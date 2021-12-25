@@ -5,6 +5,7 @@ let coin = document.querySelector(".coin");
 let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 
+flipBtn.disabled=true;
 
 flipBtn.addEventListener("click", () => {
     let i = Math.floor(Math.random() * 2);
@@ -85,4 +86,8 @@ function updateSpanTest(idName, addedNumber){
 
     //x1.2 setting this value in balance
     document.getElementById(idName).innerText = total;
+
+    if(total+win-lose>0){
+        flipBtn.disabled=false;
+    }
 }
